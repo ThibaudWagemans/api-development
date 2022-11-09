@@ -1,7 +1,7 @@
 version: "3.9"
 services:
- database_voorbeeld-service:
-  image: geeraertstibo/database_voorbeeld:latest
+ api-development-service:
+  image: geeraertstibo/api-development:latest
   ports:
     - "8000:8000"
   volumes:
