@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+ database_voorbeeld-service:
+  image: geeraertstibo/database_voorbeeld:latest
+  ports:
+    - "8000:8000"
+  volumes:
+    - sqlite_database_volume:/code/sqlitedb
+
+volumes:
+  sqlite_database_volume:
