@@ -3,37 +3,16 @@
 from pydantic import BaseModel
 
 
-class ItemBase(BaseModel):
-    title: str
-    description: str = None
+class QuoteBase(BaseModel):
+    content: str
 
 
-class ItemCreate(ItemBase):
+class QuoteCreate(QuoteBase):
     pass
 
 
-class Item(ItemBase):
+class Quote(QuoteBase):
     id: int
-    owner_id: int
-
-    # om connectie naar models.py te maken
-    # gaat op zoek naar de class Item in models.py
-    class Config:
-        orm_mode = True
-
-
-class UserBase(BaseModel):
-    email: str
-
-
-class UserCreate(UserBase):
-    password: str
-
-
-class User(UserBase):
-    id: int
-    is_active: bool
-    items: list[Item] = []
 
     class Config:
         orm_mode = True
