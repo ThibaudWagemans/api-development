@@ -28,12 +28,13 @@ def get_db():
 @app.on_event("startup")
 def startup_event():
     db = SessionLocal()
-    crud.populate_database(db)
+    print(crud.populate_database(db))
 
 # Create quote
 @app.post("/quotes/", response_model=schemas.Quote)
 def create_quote(quote: schemas.QuoteCreate, db: Session = Depends(get_db)):
-    return crud.create_quote(db=db, quote=quote)
+    new_quote = crud.create_quote(db=db, quote=quote)
+    return new_quote
 
 # GET alle quotes
 @app.get("/quotes/all", response_model=list[schemas.Quote])
@@ -47,7 +48,6 @@ def read_quote_random(db: Session = Depends(get_db)):
     quotes = crud.get_quotes(db)
     quote = random.choice(quotes)
     return quote
-
 
 # GET last quote
 @app.get("/quotes/last", response_model=schemas.Quote)
