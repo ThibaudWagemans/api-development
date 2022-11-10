@@ -52,6 +52,5 @@ def read_quote_random(db: Session = Depends(get_db)):
 # GET last quote
 @app.get("/quotes/last", response_model=schemas.Quote)
 def read_quote_last(db: Session = Depends(get_db)):
-    all_quotes = crud.get_quotes(db)
-    quote = all_quotes[-1]
+    quote = crud.get_quote_last(db)
     return quote

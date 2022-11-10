@@ -54,3 +54,9 @@ def get_quote(db: Session, quote_id: int):
 
 def get_quotes(db: Session, skip: int = 0, limit: int = 25):
     return db.query(models.Quote).offset(skip).limit(limit).all()
+
+
+def get_quote_last(db: Session):
+    db_quote = db.query(models.Quote).all()
+    quote = db_quote[-1]
+    return quote
