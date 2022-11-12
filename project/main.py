@@ -37,7 +37,7 @@ def create_quote(quote: schemas.QuoteCreate, db: Session = Depends(get_db)):
     new_quote = crud.create_quote(db=db, quote=quote)
     return new_quote
 
-# GET alle quotes
+# GET all quotes
 @app.get("/quotes/all", response_model=list[schemas.Quote])
 def read_quotes(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     quotes = crud.get_quotes(db, skip=skip, limit=limit)

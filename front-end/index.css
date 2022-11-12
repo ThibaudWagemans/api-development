@@ -1,0 +1,25 @@
+body {
+    margin: 1rem;
+}
+
+.card {
+    margin: 1rem;
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    background-color: #badcff ;
+    transform: scale(1.1);
+}
+
+@media screen and (min-width: 576px){
+    .card {
+        min-height: 240px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .card {
+        min-height: 210px;
+    }
+}
