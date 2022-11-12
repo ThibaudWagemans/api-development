@@ -35,7 +35,7 @@ def get_quote(db: Session, quote_id: int):
     return quote_by_id
 
 # get all quotes (max 25)
-def get_quotes(db: Session, skip: int = 0, limit: int = 25):
+def get_quotes(db: Session, skip: int = 0, limit: int = 50):
     all_quotes = db.query(models.Quote).offset(skip).limit(limit).all()
     return all_quotes
 
