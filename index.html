@@ -1,72 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>The Office API</title>
-  <meta name="author" content="Tibo Geeraerts">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="index.css">
-  <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>The Office API</title>
+    <meta name="author" content="Tibo Geeraerts">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+  </head>
 
-<body>
-  <h1>The office quotes API</h1>
-  <hr>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Get all quotes</h5>
-            <hr>
-            <p class="card-text">Get all quotes from the API</p>
-            <div x-data="{
-              responsedata: null,
-              async getData() {
+  <body>
+    <h1>The office quotes API</h1>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Get random quote</h5>
+              <hr>
+              <p class="card-text">Get a random quote from the API</p>
+              <div x-data="{
+                responsedata: null,
+                async getData() {
                   this.responsedata = await (await fetch('https://api-development-service-tibogeeraerts.cloud.okteto.net/quotes/random')).json();
                 }
               }">
-              <button class="btn btn-primary" x-on:click="getData">Get random quote</button>
-              <p x-text="responsedata[0].content"></p>
+                <button class="btn btn-primary" x-on:click="getData">Get random quote</button>
+                <p class="api-output" x-text="responsedata.content"></p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Get last quote</h5>
+              <hr>
+              <p class="card-text">Get last quote from the API</p>
+              <div x-data="{
+                responsedata: null,
+                async getData() {
+                  this.responsedata = await (await fetch('https://api-development-service-tibogeeraerts.cloud.okteto.net/quotes/last')).json();
+                }
+              }">
+                <button class="btn btn-primary" x-on:click="getData">Get last quote</button>
+                <p class="api-output" x-text="responsedata.content"></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Get random quote</h5>
-            <hr>
-            <p class="card-text">Get a random quote from the API</p>
-            <a href="random.html" class="btn btn-primary">Get random quote</a>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Get all quotes</h5>
+              <hr>
+              <p class="card-text">Get all quotes from the API (max 50)</p>
+              <div x-data="{
+                responsedata: null,
+                async getData() {
+                  this.responsedata = await (await fetch('https://api-development-service-tibogeeraerts.cloud.okteto.net/quotes/all')).json();
+                  let output = document.getElementById('output');
+                  output.innerHTML = '';
+                  for (let i = 0; i < this.responsedata.length; i++) {
+                    let li = document.createElement('li');
+                    li.innerHTML = this.responsedata[i].content;
+                    output.appendChild(li);
+                  }
+                }
+              }">
+                <button class="btn btn-primary" x-on:click="getData">Get all quotes</button>
+                <ul id="output" class="api-output"></ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Get last quote</h5>
-            <hr>
-            <p class="card-text">Get last quote from the API</p>
-            <a href="quotes.html" class="btn btn-primary">Get last quote</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Make custom quote</h5>
-            <hr>
-            <p class="card-block justify-content-center">Make a custom quote and put it in the API</p>
-            <a href="random.html" class="btn btn-primary">Make custom quote</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
