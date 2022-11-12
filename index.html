@@ -25,11 +25,11 @@
             <div x-data="{
               responsedata: null,
               async getData() {
-                  this.responsedata = await (await fetch('https://officeapi.dev/api/quotes/random')).json();
-              }
+                  this.responsedata = await (await fetch('https://api-development-service-tibogeeraerts.cloud.okteto.net/quotes/random')).json();
+                }
               }">
               <button class="btn btn-primary" x-on:click="getData">Get random quote</button>
-              <p x-text="responsedata[0].title"></p>
+              <p x-text="responsedata[0].content"></p>
           </div>
           </div>
         </div>
