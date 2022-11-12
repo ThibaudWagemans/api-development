@@ -2,12 +2,13 @@
 
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-
-import crud, models, schemas
-from database import SessionLocal, engine
 import os
 import random
 
+import crud, models, schemas
+from database import SessionLocal, engine
+
+# make database dir if it doesn't exist
 if not os.path.exists('.\sqlitedb'):
     os.makedirs('.\sqlitedb')
 
@@ -16,7 +17,7 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# Dependency (to create a new database session for each request)
+# make database session/connection
 def get_db():
     db = SessionLocal()
     try:
@@ -24,13 +25,13 @@ def get_db():
     finally:
         db.close()
 
-# populate database with quotes
+# populate database with quotes on startup
 @app.on_event("startup")
 def startup_event():
     db = SessionLocal()
     print(crud.populate_database(db))
 
-# Create quote
+# Create custom quote
 @app.post("/quotes/", response_model=schemas.Quote)
 def create_quote(quote: schemas.QuoteCreate, db: Session = Depends(get_db)):
     new_quote = crud.create_quote(db=db, quote=quote)
