@@ -134,7 +134,9 @@ Ook bij deze request zijn er geen parameters nodig. Door hier op de 'execute' kn
 
 Tibo Geeraerts - [@geeraerts_tibo](https://twitter.com/geeraerts_tibo) - r0882113@student.thomasmore.be
 
-Project Link: [https://github.com/tibogeeraerts/api-development](https://github.com/tibogeeraerts/api-development)
+Front-end link: [https://geeraertstibo-api.netlify.app/](https://geeraertstibo-api.netlify.app/)
+
+Hosted API link: [https://api-development-service-tibogeeraerts.cloud.okteto.net/docs](https://api-development-service-tibogeeraerts.cloud.okteto.net/docs)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
