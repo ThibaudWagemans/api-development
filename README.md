@@ -26,7 +26,7 @@
   <summary>Inhoudstafel</summary>
   <ol>
     <li>
-      <a href="#gebouwd-met">Gebouwd met</a>
+      <a href="#gebouwd-met-">Gebouwd met</a>
     </li>
     <li>
       <a href="#over-dit-project">Over dit project</a>
