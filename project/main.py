@@ -27,13 +27,7 @@ def get_db():
         db.close()
 
 # allowed origins for CORS
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "https://localhost.tiangolo.com",
-    "http://127.0.0.1:5500",
-    "https://geeraertstibo-api.netlify.app/"
-]
+origins = ["*"]
 
 # add CORS middleware
 app.add_middleware(
