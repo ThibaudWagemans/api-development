@@ -68,7 +68,7 @@
 <!-- Over dit project -->
 ## Over dit project
 
-Ik heb voor dit project gekozen om quotes uit de serie 'The Office' aan de gebruiker weer te geven. Ik heb gekozen voor deze serie omdat dit één van mijn favoriete series is, en er enrom veel grappige dingen in worden gezegd. De ideale serie om dus grappige quotes uit weer te geven.
+Ik heb voor dit project gekozen om quotes uit de serie 'The Office' aan de gebruiker weer te geven. Ik heb gekozen voor deze serie omdat dit één van mijn favoriete series is, en er enorm veel grappige dingen in worden gezegd. De ideale serie om dus grappige quotes uit weer te geven.
 
 ### Front-end API
 
@@ -97,7 +97,7 @@ De gebruiker kan ook zelf een quote opslaan in de database met de 'Create quote'
 
 ![Get all quotes knop front-end][getallquotes-frontend]
 
-Deze knop geeft de eerste 50 quotes in de database weer. Dit zijn normaal gezien al de quotes in de database aangezien er bij het opstarten maar 20 quotes in de database worden gezet. Via de back-end API kunnen er quotes worden toegevoegd, maar als er meer dan 50 quotes in totaal zijn worden deze niet meer weergegeven.
+Deze knop geeft de eerste 50 quotes in de database weer. Dit zijn normaal gezien al de quotes in de database aangezien er bij het opstarten maar 20 quotes in de database worden gezet. Via de back-end API kunnen er quotes worden toegevoegd, maar als er meer dan 50 quotes in totaal zijn worden deze niet meer weergegeven. Er wordt hier voor maximaal 50 quotes gekozen om te voorkomen dat er een enorm lange lijst ontstaat.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
