@@ -34,23 +34,32 @@
         <li>
           <a href="#front-end-api">Front-end API</a>
           <ul>
-             <li><a href="#get-random-quote-front-end">Get random quote</li>
-             <li><a href="#get-last-quote-front-end">Get last quote</li>
-             <li><a href="#get-all-quotes-front-end">Get all quotes</li>
+             <li><a href="#get-random-quote-front-end">Get random quote front-end</li>
+             <li><a href="#get-last-quote-front-end">Get last quote front-end</li>
+             <li><a href="#create-quote-front-end">Create quote front-end</li>
+             <li><a href="#get-all-quotes-front-end">Get all quotes front-end</li>
           </ul>
         </li>
         <li>
           <a href="#back-end-api">Back-end API</a>
           <ul>
-             <li><a href="#post-custom-quote-back-end">Post custom quote</li>
-             <li><a href="#get-all-quotes-back-end">Get all quotes</li>
-             <li><a href="#get-random-quote-back-end">Get random quote</li>
-             <li><a href="#get-last-quote-back-end">Get last quote</li>
+             <li><a href="#post-custom-quote-back-end">Post custom quote back-end</li>
+             <li><a href="#get-all-quotes-back-end">Get all quotes back-end</li>
+             <li><a href="#get-random-quote-back-end">Get random quote back-end</li>
+             <li><a href="#get-last-quote-back-end">Get last quote back-end</li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#lokaal-gebruiken">Lokaal gebruiken</a></li>
+    <li>
+      <a href="#postman-requests">Postman requests</a>
+      <ul>
+             <li><a href="#get-random-quote-postman">Get random quote Postman</li>
+             <li><a href="#get-last-quote-postman">Get last quote Postman</li>
+             <li><a href="#get-all-quotes-postman">Get all quotes postman</li>
+             <li><a href="#post-custom-quote-postman">Post custom quote Postman</li>
+          </ul>
+    </li>
     <li><a href="#contactgegevens">Contactgegevens</a></li>
   </ol>
 </details>
@@ -112,7 +121,7 @@ Dit is de home pagina van de back-end API. Deze pagina is een interactieve API d
 
 ![Post custom quote back-end][postquote-backend]
 
-Via dit deel op de pagina kan er een nieuwe quote in de database worden gezet. Om dit te doen moet de gebruiker een POST request doen naar de API met in de body een "content" veld, waarachter een string moet komen. Wat de gebruiker in de string zet zal als quote gezien worden en zo in de database worden gezet. De API zal zelf de quote van een ID voorzien in de database.
+Via dit deel op de pagina kan er een nieuwe quote in de database worden gezet. Om dit te doen moet de gebruiker een POST request doen naar de API met in de body een "content" veld, waarachter een string moet komen, in JSON formaat. Wat de gebruiker in de string zet zal als quote gezien worden en zo in de database worden gezet. De API zal zelf de quote van een ID voorzien in de database.
 
 #### Get all quotes back-end
 
@@ -131,6 +140,28 @@ In dit deel van de docs pagina kan er een willekeurige quote worden gevraagd. Er
 ![Get last quote back-end][getlastquote-backend]
 
 Ook bij deze request zijn er geen parameters nodig. Door hier op de 'execute' knop te drukken wordt de laatste quote uit de database opgevraagt. Als er dus een zelfgemaakte quote in de database is gezet, zal deze hier weergegeven worden.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Postman requests
+
+Hier geef ik nog even een korte demonstratie hoe de 4 verschillende endpoints via Postman gebruikt kunnen worden.
+
+### Get random quote Postman
+
+![Get random quote with Postman][getrandom-postman]
+
+### Get last quote Postman
+
+![Get last quote with Postman][getlast-postman]
+
+### Get all quotes Postman
+
+![Get all quotes with Postman][getall-postman]
+
+### Post custom quote Postman
+
+![Post custom quote with Postman][postquote-postman]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,3 +203,8 @@ Hosted API link: [https://api-development-service-tibogeeraerts.cloud.okteto.net
 [getallquotes-backend]: images/getallquotes-back-end.jpg
 [getrandomquote-backend]: images/getrandomquote-back-end.jpg
 [getlastquote-backend]: images/getlastquote-back-end.jpg
+
+[getrandom-postman]: images/postman-getrandom.jpg
+[getlast-postman]: images/postman-getlast.jpg
+[getall-postman]: images/postman-getall.jpg
+[postquote-postman]: images/postman-postquote.jpg
