@@ -5,6 +5,7 @@ body {
 .card {
     margin: 1rem;
     transition: transform 0.5s;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -31,4 +32,6 @@ body {
 input {
     margin-bottom: 1rem;
     display: block;
+    width: 50vw;
+    max-width: 1040px;
 }
