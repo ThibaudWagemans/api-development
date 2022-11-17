@@ -87,6 +87,12 @@ Als de gebruiker op deze knop drukt, wordt er een willekeurige quote uit de data
 
 De get last quote knop kan worden ingedrukt om de laatste quote uit de database weer te geven aan de gebruiker. Deze knop is vooral bedoeld om te kijken of een zelf ingegeven quote in de database staat, aangezien deze helemaal als laatst in de database staat. Deze knop zal zonder aanpassing van de database altijd dezelfde quote weergeven.
 
+#### Create quote front-end
+
+![Create quote knop front-end][postquote-frontend]
+
+De gebruiker kan ook zelf een quote opslaan in de database met de 'Create quote' knop. Er kan in het tekstveld boven de knop zelf een quote worden ingetoetst, en in de database worden opgeslagen door op de knop te drukken. Nadat er op de knop is gedrukt komt er onder de knop ook een bevestiging van welke quote er is opgeslagen in de database.
+
 #### Get all quotes front-end
 
 ![Get all quotes knop front-end][getallquotes-frontend]
@@ -157,6 +163,7 @@ Hosted API link: [https://api-development-service-tibogeeraerts.cloud.okteto.net
 [frontend-url]: https://geeraertstibo-api.netlify.app/
 [getrandomquote-frontend]: images/getrandomquote-front-end.jpg
 [getlastquote-frontend]: images/getlastquote-front-end.jpg
+[postquote-frontend]: images/postquote-front-end.jpg
 [getallquotes-frontend]: images/getallquotes-front-end.jpg
 
 [backend-screenshot]: images/back-end-screenshot.jpg
