@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="index.css">
     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
   </head>
-
   <body>
     <h1>The Office quotes API</h1>
     <hr>
@@ -48,6 +47,38 @@
               }">
                 <button class="btn btn-primary" x-on:click="getData">Get last quote</button>
                 <p class="api-output" x-text="responsedata.content"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Create custom quote</h5>
+              <hr>
+              <p class="card-text">Create a custom quote and save it in the database</p>
+              <div x-data="{
+                responsedata: null,
+                postcustomquote: null,
+                async postquote() {
+                  this.responsedata = await (await fetch('https://api-development-service-tibogeeraerts.cloud.okteto.net/quotes/', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                    content: this.postcustomquote,
+                    body: 'bar',
+                  }),
+                  headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                  },
+                  })).json();
+                },
+              }">
+                <input type="text" x-model="postcustomquote">
+                <button class="btn btn-primary" x-on:click="postquote">Create quote</button>
+                <p class="api-output"> New quote saved in database : <span x-text="responsedata.content"></span></p>
               </div>
             </div>
           </div>

@@ -27,3 +27,8 @@ body {
 .api-output {
     margin-top: 1rem;
 }
+
+input {
+    margin-bottom: 1rem;
+    display: block;
+}
